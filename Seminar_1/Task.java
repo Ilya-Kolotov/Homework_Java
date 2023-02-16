@@ -13,4 +13,9 @@ public class Task {
         return result;
     }
 
+
+    public static void outputResult(String text) { 
+        System.out.println(text);
+    }
+
 }
