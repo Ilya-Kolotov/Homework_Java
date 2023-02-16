@@ -17,5 +17,14 @@ public class Task {
     public static void outputResult(String text) { 
         System.out.println(text);
     }
+    
+
+    private static Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        int num = getData("Введите номер треугольного числа: ");
+        int result = triangNumber(num);
+        outputResult("Треугольным числом под номером " + num + " является " + result);
+
+    }
 
 }
