@@ -86,5 +86,6 @@ public class Task {
             String msg = scan.nextLine();
             System.out.println(msg);
         }
+        scan.close();
     }
 }
