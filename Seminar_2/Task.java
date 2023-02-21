@@ -1,5 +1,6 @@
 package Seminar_2;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -50,5 +51,13 @@ public class Task {
         }
         scan.close();
         return intArray;
+    }
+    public static void outputTerminal(String text) throws Exception {
+        File f = new File(text);
+        Scanner scan = new Scanner(f);
+        while (scan.hasNextLine()) {
+            String msg = scan.nextLine();
+            System.out.println(msg);
+        }
     }
 }
