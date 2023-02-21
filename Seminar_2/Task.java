@@ -7,8 +7,31 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Task {
+    private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        
+        Integer num = getData("Введите число: ");
+        Integer powNum = getData("Введите степень числа: ");  
+        System.out.println("Число " + num + " в степени " + powNum + " -> " + powNumber(num, powNum));
+        String pathInput = "Seminar_2/input.txt";
+        String pathOutput = "Seminar_2/output.txt";
+        String saveStr = String.format("a %d\nb %d", num, powNum);
+        writeInFile(saveStr, pathInput);
+        System.out.printf("\nВходные данные записаны в файл %s\n", pathInput);
+        outputTerminal(pathInput);
+        int[] argAB = readFile(pathInput, "a", "b"); 
+        int newA = argAB[0];
+        int newB = argAB[1];
+
+        if (num ==0 && powNum == 0) {
+            saveStr = "не определено";
+        }
+        else {
+            Double intResult = powNumber(newA, newB);
+            saveStr = String.valueOf(intResult);
+        }
+        writeInFile(saveStr, pathOutput);
+        System.out.printf("\nРезультат записан в файл %s\n", pathOutput);
+        outputTerminal(pathOutput);
     }
     public static int getData(String text) { 
         System.out.print(text); 
@@ -48,7 +71,6 @@ public class Task {
             String[] strArray = scan.nextLine().split(" ");
             if(a.equalsIgnoreCase(strArray[0])){
                 intArray[0] = Integer.parseInt(strArray[1]); 
-                System.out.println(intArray[0]);
             }
             else if (b.equalsIgnoreCase(strArray[0])) {
                 intArray[1] = Integer.parseInt(strArray[1]);
