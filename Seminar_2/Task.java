@@ -1,11 +1,21 @@
 package Seminar_2;
 
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Task {
     public static void main(String[] args) throws Exception {
         
+    }
+    public static void writeInFile(String data, String path) {
+        try (FileWriter wfile = new FileWriter(path, false)) {
+            wfile.write(data);
+            wfile.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     public static int[] readFile(String fileName, String a, String b) throws Exception {
         FileReader fr = new FileReader(fileName);
