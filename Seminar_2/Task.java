@@ -10,6 +10,11 @@ public class Task {
     public static void main(String[] args) throws Exception {
         
     }
+    public static int getData(String text) { 
+        System.out.print(text); 
+        return input.nextInt(); 
+    }
+
     public static double powNumber(int value, int powValue) {
         double result = 1;
         if (powValue > 0) {
