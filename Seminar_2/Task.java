@@ -9,6 +9,23 @@ public class Task {
     public static void main(String[] args) throws Exception {
         
     }
+    public static double powNumber(int value, int powValue) {
+        double result = 1;
+        if (powValue > 0) {
+            for (int i = 1; i <= powValue; i++) {
+                result *= value;
+            }
+            return result;
+        } else if (powValue < 0) {
+            for (int i = -1; i > powValue; i--) {
+                result *= value;
+            }
+            result = 1 / (result * value);
+            return result;
+        } else {
+            return 1;
+        }
+    }
     public static void writeInFile(String data, String path) {
         try (FileWriter wfile = new FileWriter(path, false)) {
             wfile.write(data);
