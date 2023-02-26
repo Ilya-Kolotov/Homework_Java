@@ -6,6 +6,11 @@ import java.util.stream.IntStream;
 public class Task {
 
     public static void main(String[] args) {
+        int[] array = fillArray(10, 20);
+        System.out.print("Первоначальный массив: " + Arrays.toString(array) + "\n");
+
+        int[] result = mergeSort(array);
+        System.out.println("Сортированный массив:  " + Arrays.toString(result));
         
     }
     public static int[] fillArray(int size, int range) {
